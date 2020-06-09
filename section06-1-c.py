@@ -48,10 +48,10 @@ element.send_keys('테스트 검색')
 element.submit()
 
 # 스크린 샷 저장1
-browser.save_screenshot("c:/website_ch1.png")
+browser.save_screenshot("D:/A/website_ch1.png")
 
 # 스크린 샷 저장2
-browser.get_screenshot_as_file("c:/website_ch2.png")
+browser.get_screenshot_as_file("D:/A/website_ch2.png")
 
 # 브라우저 종료
 browser.quit()

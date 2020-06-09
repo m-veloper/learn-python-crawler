@@ -26,7 +26,7 @@ chrome_options.add_argument("--headless")
 browser = webdriver.Chrome('./webdriver/chrome/chromedriver.exe', options=chrome_options)
 
 # 엑셀 처리 선언
-workbook = xlsxwriter.Workbook("C:/crawling_result.xlsx")
+workbook = xlsxwriter.Workbook("D:/A/crawling_result.xlsx")
 
 # 워크 시트
 worksheet = workbook.add_worksheet()
@@ -107,14 +107,14 @@ while cur_page_num <= target_crawl_num:
             prod_price = v.select('p.price_sect > a')[0].text.strip()
 
             # 이미지 요청 후 바이트 변환
-            img_data = BytesIO(req.urlopen(v.select('a.thumb_link > img')[0]['data-original']).read())
+            # img_data = BytesIO(req.urlopen(v.select('a.thumb_link > img')[0]['data-original']).read())
 
             # 엑셀 저장(텍스트)
             worksheet.write('A%s' % ins_cnt, prod_name)
             worksheet.write('B%s' % ins_cnt, prod_price)
 
             # 엑셀 저장(이미지)
-            worksheet.insert_image('C%s' % ins_cnt, prod_name, {'image_data': img_data})
+            # worksheet.insert_image('C%s' % ins_cnt, prod_name, {'image_data': img_data})
 
             # 다음 행 증가
             ins_cnt += 1
@@ -124,7 +124,7 @@ while cur_page_num <= target_crawl_num:
     print()
 
     # 페이지 별 스크린 샷 저장
-    browser.save_screenshot("c:/target_page{}.png".format(cur_page_num))
+    browser.save_screenshot("D:/A/target_page{}.png".format(cur_page_num))
 
     # 페이지 증가
     cur_page_num += 1

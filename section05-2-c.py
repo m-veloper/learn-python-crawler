@@ -30,7 +30,7 @@ url = base + quote
 res = req.urlopen(url)
 
 # 이미지 저장 경로
-savePath = "C:/imagedown/"  # C:\\imagedown\\
+savePath = "D:/A/"  # C:\\imagedown\\
 
 # 폴더 생성 예외처리 (문제 발생 시 프로그램 종료)
 try:
